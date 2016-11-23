@@ -87,5 +87,19 @@ public class CarrosServlet extends HttpServlet {
 		
 		return carro;
 	}
+
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String  requestUri = req.getRequestURI();
+		Long id = RegexUtil.mathId(requestUri);
+		if(id != null) {
+			carroService.delete(id);
+			resp.sendError(200, "Carro excluído com sucesso");
+		} else {
+			resp.sendError(404, "URL inválida");
+		}
+	}
+	
+	
 	
 }

@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 /**
  * A calsse <code>BaseDAO</code> contém as configurações necessárias
- * para realizar a conexão com o banco de dados
+ * para realizar a conexão com o banco de dados.
  *
  * @author Augusto dos Santos
  * @version 1.0 18 de nov de 2016
