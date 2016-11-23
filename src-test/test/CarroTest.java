@@ -38,5 +38,36 @@ public class CarroTest {
 		Carro bugatti = carroService.findByName("Bugatti Veyron").get(0);
 		assertEquals("Bugatti Veyron", bugatti.getNome());
 	}
+	
+	@Test
+	public void testarSalvarDeletarCarro() {
+		Carro carro = new Carro("Teste nome", "Teste tipo", "Teste desc");
+		carro.setUrlFoto("url foto aqui");
+		carro.setUrlVideo("url video aqui");
+		carro.setLatitude("lat");
+		carro.setLongitude("long");
+		carroService.save(carro);
+		
+		Long id = carro.getId();
+		assertNotNull(id);
+		
+		carro = carroService.getCarro(id);
+		assertEquals("Teste nome", carro.getNome());
+		assertEquals("Teste tipo", carro.getTipo());
+		assertEquals("Teste desc", carro.getDescricao());
+		assertEquals("url foto aqui", carro.getUrlFoto());
+		assertEquals("url video aqui", carro.getUrlVideo());
+		assertEquals("lat", carro.getLatitude());
+		assertEquals("long", carro.getLongitude());
+		
+		carro.setNome("Teste UPDATE");
+		carroService.save(carro);
+		carro = carroService.getCarro(id);
+		assertEquals("Teste UPDATE", carro.getNome());
+		
+		carroService.delete(id);
+		carro = carroService.getCarro(id);
+		assertNull(carro);
+	}
 
 }

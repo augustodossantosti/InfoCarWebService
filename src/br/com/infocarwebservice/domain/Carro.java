@@ -8,6 +8,8 @@ package br.com.infocarwebservice.domain;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * A classe <code>Carro</code> é uma entidade que representa cada
  * carro a ser persistido no banco.
@@ -15,17 +17,28 @@ import java.io.Serializable;
  * @author Augusto dos Santos
  * @version 1.0 18 de nov de 2016
  */
+@XmlRootElement
 public class Carro implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private long id;
-	private String tipo;
+	private Long id;
 	private String nome;
+	private String tipo;
 	private String descricao;
 	private String urlFoto;
 	private String urlVideo;
 	private String latitude;
 	private String longitude;
+	
+	public Carro() {
+		
+	}
+	
+	public Carro(String nome, String tipo, String descricao) {
+		this.nome = nome;
+		this.tipo = tipo;
+		this.descricao = descricao;
+	}
 	
 	public Long getId() {
 		return id;
@@ -95,7 +108,5 @@ public class Carro implements Serializable {
 		return "Carro [id= " + id + ", tipo: " + tipo + ", nome: " + nome
 				+ ", descricao: " + descricao;
 	}
-	
-	
 	
 }
