@@ -25,13 +25,12 @@ import org.glassfish.jersey.jettison.JettisonFeature;
  */
 public class MyApplication extends Application {
 
-	@Override
-	public Set<Object> getSingletons() {
-		Set<Object> singletons = new HashSet<>();
-		singletons.add(new JettisonFeature());
-		return singletons;
-	}
-
+	/**
+	 * Indica ao Jersey o pacote onde estão localizadas as
+	 * classes do web service que devem ser escaneadas em
+	 * busca de anotações que determinarão os métodos a serem
+	 * chamados a cada tipo de requisição.
+	 */
 	@Override
 	public Map<String, Object> getProperties() {
 		Map<String, Object> properties = new HashMap<>();
@@ -39,8 +38,4 @@ public class MyApplication extends Application {
 		return properties;
 	}
 	
-	
-	
-	
-
 }

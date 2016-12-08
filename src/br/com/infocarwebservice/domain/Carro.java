@@ -30,16 +30,6 @@ public class Carro implements Serializable {
 	private String latitude;
 	private String longitude;
 	
-	public Carro() {
-		
-	}
-	
-	public Carro(String nome, String tipo, String descricao) {
-		this.nome = nome;
-		this.tipo = tipo;
-		this.descricao = descricao;
-	}
-	
 	public Long getId() {
 		return id;
 	}

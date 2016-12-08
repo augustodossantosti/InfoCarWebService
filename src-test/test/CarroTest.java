@@ -41,7 +41,10 @@ public class CarroTest {
 	
 	@Test
 	public void testarSalvarDeletarCarro() {
-		Carro carro = new Carro("Teste nome", "Teste tipo", "Teste desc");
+		Carro carro = new Carro();
+		carro.setNome("Teste nome");
+		carro.setTipo("Teste tipo");
+		carro.setDescricao("Teste desc");
 		carro.setUrlFoto("url foto aqui");
 		carro.setUrlVideo("url video aqui");
 		carro.setLatitude("lat");
