@@ -7,18 +7,14 @@
 package br.com.infocarwebservice.rest;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
-import javax.ws.rs.core.Application;
-
-import org.glassfish.jersey.jettison.JettisonFeature; 
+import javax.ws.rs.core.Application; 
 
 
 /**
  * A classe <code>MyApplication</code> contém as configurações
- * do Jerswy.
+ * do Jersey.
  *
  * @author Augusto dos Santos
  * @version 1.0 28 de nov de 2016
